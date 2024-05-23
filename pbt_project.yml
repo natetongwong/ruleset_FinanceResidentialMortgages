@@ -66,14 +66,6 @@ functions:
   expressions: {}
   airflowFunctions: {}
   businessRules:
-    businessRules/EFS_Override_Rule_ID:
-      name: EFS_Override_Rule_ID
-      description: ''
-      tags: []
-      inputs: []
-      outputs: []
-      author: nathan+business@prophecy.io
-      createdAt: '2022-12-15 18:04:50'
     businessRules/Override_Housing_Purpose:
       name: Override_Housing_Purpose
       description: Rule to override housing purposes
