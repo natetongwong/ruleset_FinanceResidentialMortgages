@@ -1,5 +1,5 @@
 name: Ruleset10_Override_Housing_Purpose
-description: Contains rule for overriding housing purpose
+description: Contains rule fors for Finance Residential Mortgages.
 version: '1.5'
 author: nathan+business@prophecy.io
 language: python
@@ -104,6 +104,14 @@ functions:
     businessRules/Override_Housing_Purpose:
       name: Override_Housing_Purpose
       description: Rule to override housing purposes
+      tags: []
+      inputs: []
+      outputs: []
+      author: nathan+business@prophecy.io
+      createdAt: '2022-12-15 18:04:50'
+    businessRules/Override_EFS_Rule_Id:
+      name: Override_EFS_Rule_Id
+      description: ''
       tags: []
       inputs: []
       outputs: []

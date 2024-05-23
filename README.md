@@ -1,1 +1,4 @@
-# Ruleset_Override_Housing_Purpose Repository
+# Content
+Contains rules used for **Finance Residential Mortgages**:
+1. Override Housing Purpose
+1. Risk Asset Class Segmentation
