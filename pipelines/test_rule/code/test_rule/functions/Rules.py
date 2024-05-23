@@ -20,10 +20,7 @@ def Override_Housing_Purpose(
         .otherwise(col("housing_purpose"))\
         .alias("EFS_Housing_Purpose")
 
-def Override_EFS_Residual_Term_Rule_ID(
-        residual_years: Column=col("Residual_years"), 
-        maturity_date: Column=col("Maturity_Date")
-):
+def Override_EFS_Rule_Id(residual_years: Column=col("Residual_years"), maturity_date: Column=col("Maturity_Date")):
     return when(((residual_years > lit(0)) & (residual_years <= lit(1))), lit(5))\
         .when((residual_years > lit(1)), lit(6))\
         .when((maturity_date == lit("")), lit(7))\
