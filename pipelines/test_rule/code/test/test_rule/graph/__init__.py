@@ -1,1 +1,1 @@
-from .test_add_rule_override_housing_purpose import *
+from .test_Add_Rule import *

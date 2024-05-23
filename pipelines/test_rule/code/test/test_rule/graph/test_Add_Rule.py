@@ -4,26 +4,26 @@ from pyspark.sql.types import *
 from argparse import Namespace
 from prophecy.test import BaseTestCase
 from prophecy.test.utils import *
-from test_rule.graph.add_rule_override_housing_purpose import *
+from test_rule.graph.Add_Rule import *
 from test_rule.config.ConfigStore import *
 
 
-class add_rule_override_housing_purposeTest(BaseTestCase):
+class Add_RuleTest(BaseTestCase):
 
     def test_unit_test_(self):
         dfIn0 = createDfFromResourceFiles(
             self.spark,
-            'test/resources/data/test_rule/graph/add_rule_override_housing_purpose/in0/schema.json',
-            'test/resources/data/test_rule/graph/add_rule_override_housing_purpose/in0/data/test_unit_test_.json',
+            'test/resources/data/test_rule/graph/Add_Rule/in0/schema.json',
+            'test/resources/data/test_rule/graph/Add_Rule/in0/data/test_unit_test_.json',
             'in0'
         )
         dfOut = createDfFromResourceFiles(
             self.spark,
-            'test/resources/data/test_rule/graph/add_rule_override_housing_purpose/out/schema.json',
-            'test/resources/data/test_rule/graph/add_rule_override_housing_purpose/out/data/test_unit_test_.json',
+            'test/resources/data/test_rule/graph/Add_Rule/out/schema.json',
+            'test/resources/data/test_rule/graph/Add_Rule/out/data/test_unit_test_.json',
             'out'
         )
-        dfOutComputed = add_rule_override_housing_purpose(self.spark, dfIn0)
+        dfOutComputed = Add_Rule(self.spark, dfIn0)
         assertDFEquals(
             dfOut.select("EFS_Housing_Purpose"),
             dfOutComputed.select("EFS_Housing_Purpose"),

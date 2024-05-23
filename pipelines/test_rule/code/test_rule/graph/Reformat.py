@@ -6,7 +6,7 @@ from prophecy.libs import typed_lit
 from test_rule.config.ConfigStore import *
 from test_rule.functions import *
 
-def reformat_data_types(spark: SparkSession, in0: DataFrame) -> DataFrame:
+def Reformat(spark: SparkSession, in0: DataFrame) -> DataFrame:
     return in0.select(
         col("From_Date"), 
         col("To_Date"), 

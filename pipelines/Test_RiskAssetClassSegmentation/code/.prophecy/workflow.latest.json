@@ -1,0 +1,337 @@
+{
+  "metainfo" : {
+    "migrationVersions" : {
+      "gemBuilderVersion" : "v1"
+    },
+    "functions" : {
+      "businessRules" : {
+        "rules" : [ ],
+        "sharedRules" : [ ]
+      }
+    },
+    "codeGenConfiguration" : {
+      "editableConfig" : true,
+      "plibVersion" : {
+        "mavenVersion" : "7.1.100",
+        "pyPiVersion" : "1.8.23"
+      }
+    },
+    "id" : "1",
+    "uri" : "pipelines/Test_RiskAssetClassSegmentation",
+    "pipelineSettingsInfo" : {
+      "applicationName" : "Test_RiskAssetClassSegmentation",
+      "hasApplication" : true,
+      "isFunctionsPackageDirDefined" : true
+    },
+    "language" : "python",
+    "fabricId" : "117",
+    "frontEndLanguage" : "sql",
+    "mode" : "batch",
+    "udfs" : {
+      "language" : "python",
+      "udfs" : [ ],
+      "functionPackageName" : "westpacbusiness.ruleset10overridehousingpurpose.functions",
+      "sharedFunctionPackageNames" : [ "prophecy.spark_basic.functions", "prophecy.warehouse.functions" ]
+    },
+    "udafs" : {
+      "language" : "python",
+      "code" : ""
+    },
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "oldCommon" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "fabrics" : { },
+      "instances" : { },
+      "selected" : "default",
+      "nonEditable" : [ ],
+      "isSubscribedPipelineWithPipelineConfigs" : false
+    },
+    "sparkConf" : [ ],
+    "hadoopConf" : [ ],
+    "codeMode" : "sparse",
+    "buildSystem" : "maven",
+    "externalDependencies" : [ ],
+    "dependentProjectExternalDependencies" : [ {
+      "projectUID" : "224",
+      "projectName" : "ProphecySparkBasicsPython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "225",
+      "projectName" : "ProphecyWarehousePython",
+      "externalDependencies" : [ ]
+    } ],
+    "isImported" : false,
+    "interimMode" : "Full",
+    "interimModeEnabled" : true,
+    "visualCodeInterimMode" : "Disabled",
+    "recordsLimit" : {
+      "enabled" : false,
+      "value" : 1000
+    },
+    "topLevelPackage" : "test_riskassetclasssegmentation",
+    "configurationVersion" : "v2"
+  },
+  "connections" : [ {
+    "id" : "CLzYkI5KmEABpMp-my6w_$$-x4UEChI9h8pOxhk8HjD9",
+    "source" : "7Jg_O73s8bpQx93ks8AxZ$$uEznN7NAyltPdebi53P7B",
+    "sourcePort" : "LjznI03iUYDjqU39BBhKl$$ep4npIO4PoCNy4XwdgWuZ",
+    "target" : "jfYJq0Gp4uN7GUUBnMWpA$$tz8J6qU8RsJQ12hPKxpWg",
+    "targetPort" : "9bax1JKWfVHyRzn_zAsTY$$yxNkAwjsmSs3Ls3sdS6KL"
+  } ],
+  "processes" : {
+    "7Jg_O73s8bpQx93ks8AxZ$$uEznN7NAyltPdebi53P7B" : {
+      "id" : "7Jg_O73s8bpQx93ks8AxZ$$uEznN7NAyltPdebi53P7B",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "Sample_Data",
+        "slug" : "Sample_Data",
+        "x" : -400,
+        "y" : -200,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "LjznI03iUYDjqU39BBhKl$$ep4npIO4PoCNy4XwdgWuZ",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/riskassetclass_sampledata"
+      }
+    },
+    "jfYJq0Gp4uN7GUUBnMWpA$$tz8J6qU8RsJQ12hPKxpWg" : {
+      "id" : "jfYJq0Gp4uN7GUUBnMWpA$$tz8J6qU8RsJQ12hPKxpWg",
+      "component" : "AddRule",
+      "metadata" : {
+        "label" : "Apply_Rule",
+        "slug" : "Apply_Rule",
+        "x" : -180,
+        "y" : -200,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "9bax1JKWfVHyRzn_zAsTY$$yxNkAwjsmSs3Ls3sdS6KL",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "ID",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "PRODUCT_TYPE_CODE",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "CON_BUS_INDC",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "MONTH_KEY",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "LG_PRODUCT_L08_KEY",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "REGLT_COUNTERPARTY_TYPE_CODE",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "TCE",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "BASEL_RETAIL_CORP_CODE",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "SOURCE_SYSTEM_CODE",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "CONSOL_ANNUAL_REVENUE",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "ANZSIC_CODE",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "OWNER_OCCUPIED_FLG",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "y1ltPn-QwqInKpTiQIdAQ$$R_ismo2eqHNx996SHtTyn",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "importLanguage" : "sql",
+        "importString" : "",
+        "transformations" : [ {
+          "AddRule" : {
+            "expression" : {
+              "format" : "sql",
+              "expression" : "RiskAssetClassSegmentation()"
+            },
+            "param_errors" : [ {
+              "paramName" : "PRODUCT_TYPE_CODE",
+              "hasError" : false
+            }, {
+              "paramName" : "CON_BUS_INDC",
+              "hasError" : false
+            }, {
+              "paramName" : "REGLT_COUNTERPARTY_TYPE_CODE",
+              "hasError" : false
+            }, {
+              "paramName" : "LG_PRODUCT_L08_KEY",
+              "hasError" : false
+            }, {
+              "paramName" : "TCE",
+              "hasError" : false
+            }, {
+              "paramName" : "MONTH_KEY",
+              "hasError" : false
+            }, {
+              "paramName" : "BASEL_RETAIL_CORP_CODE",
+              "hasError" : false
+            }, {
+              "paramName" : "SOURCE_SYSTEM_CODE",
+              "hasError" : false
+            }, {
+              "paramName" : "CONSOL_ANNUAL_REVENUE",
+              "hasError" : false
+            }, {
+              "paramName" : "ANZSIC_CODE",
+              "hasError" : false
+            }, {
+              "paramName" : "OWNER_OCCUPIED_FLG",
+              "hasError" : false
+            } ]
+          },
+          "MissingColumn" : {
+            "sourceColumn" : "",
+            "defaultValue" : {
+              "expression" : "",
+              "format" : "python"
+            }
+          },
+          "DropColumn" : {
+            "sourceColumn" : ""
+          },
+          "kind" : "AddRule",
+          "RenameColumn" : {
+            "sourceColumn" : "",
+            "targetColumn" : ""
+          },
+          "AddReplaceColumn" : {
+            "sourceColumn" : "",
+            "expression" : {
+              "expression" : "",
+              "format" : "python"
+            }
+          }
+        } ],
+        "activeTab" : "transformations",
+        "columnsSelector" : [ ]
+      },
+      "componentInfo" : {
+        "gemId" : "gems/AddRule",
+        "projectName" : "Ruleset_Finance_Residential_Mortgages"
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ ],
+    "outputs" : [ ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false,
+    "autoUpdateOnRun" : false
+  }
+}

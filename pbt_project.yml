@@ -25,6 +25,20 @@ pipelines:
       outputs: []
     subgraphs: []
     dependencies: {}
+  pipelines/Test_RiskAssetClassSegmentation:
+    name: Test_RiskAssetClassSegmentation
+    description: Test Risk Asset Class Segmentation Rule
+    author: nathan+business@prophecy.io
+    mode: batch
+    artefactID: ''
+    language: python
+    createdAt: '2024-05-23 21:10:54'
+    datasets:
+      inputs:
+      - datasets/riskassetclass_sampledata
+      outputs: []
+    subgraphs: []
+    dependencies: {}
 datasets:
   datasets/sample_data:
     name: housingpurposeid_sampledata
@@ -39,6 +53,19 @@ datasets:
         description: ''
         author: nathan+business@prophecy.io
         createdAt: '2024-05-23 01:18:25'
+  datasets/riskassetclass_sampledata:
+    name: riskassetclass_sampledata
+    description: ''
+    author: nathan+business@prophecy.io
+    createdAt: '2024-05-23 21:13:50'
+    mode: batch
+    physicalDatasets:
+      DatabricksCluster:
+        fabricId: 117
+        datasetType: Database
+        description: ''
+        author: nathan+business@prophecy.io
+        createdAt: '2024-05-23 21:13:50'
 templates: {}
 jobs: {}
 gemContainer:
@@ -66,6 +93,14 @@ functions:
   expressions: {}
   airflowFunctions: {}
   businessRules:
+    businessRules/RiskAssetClassSegmentation:
+      name: RiskAssetClassSegmentation
+      description: ''
+      tags: []
+      inputs: []
+      outputs: []
+      author: nathan+business@prophecy.io
+      createdAt: '2022-12-15 18:04:50'
     businessRules/Override_Housing_Purpose:
       name: Override_Housing_Purpose
       description: Rule to override housing purposes
@@ -84,18 +119,18 @@ sqlSources: {}
 sqlUnreferencedSources: {}
 sqlPipeline: null
 dependencies:
-- modifiedAt: '2024-05-23T00:43:52.974443Z'
+- type: plibMaven
+  modifiedAt: '2024-05-23T21:10:57.805406Z'
   name: plibMaven
   version: 7.1.100
-  id: '26193071'
-  createdAt: '2024-05-23T00:43:52.974443Z'
-  type: plibMaven
-- modifiedAt: '2024-05-23T00:43:52.974443Z'
+  id: '757731159'
+  createdAt: '2024-05-23T21:10:57.805375Z'
+- type: plibPypi
+  modifiedAt: '2024-05-23T21:10:57.805442Z'
   name: plibPypi
   version: 1.8.23
-  id: '1557297722'
-  createdAt: '2024-05-23T00:43:52.974443Z'
-  type: plibPypi
+  id: '1307381560'
+  createdAt: '2024-05-23T21:10:57.805433Z'
 projectDependencies:
   '225':
     projectUID: 225
