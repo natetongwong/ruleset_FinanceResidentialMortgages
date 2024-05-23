@@ -109,14 +109,6 @@ functions:
       outputs: []
       author: nathan+business@prophecy.io
       createdAt: '2022-12-15 18:04:50'
-    businessRules/Override_EFS_Rule_Id:
-      name: Override_EFS_Rule_Id
-      description: ''
-      tags: []
-      inputs: []
-      outputs: []
-      author: nathan+business@prophecy.io
-      createdAt: '2022-12-15 18:04:50'
 subgraphs: {}
 sqlModels: {}
 sqlSnapshots: {}
