@@ -6,5 +6,5 @@ from prophecy.libs import typed_lit
 from test_rule.config.ConfigStore import *
 from test_rule.functions import *
 
-def sample_data(spark: SparkSession) -> DataFrame:
+def HousingPurpose_Sample(spark: SparkSession) -> DataFrame:
     return spark.read.table("`westpac`.`raw`.`housingpurposeid_sampledata`")

@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 setup(
-    name = 'test_rule',
+    name = 'Test_OverrideHousingPurpose',
     version = '1.0',
     packages = find_packages(include = ('test_rule*', )) + ['prophecy_config_instances'],
     package_dir = {'prophecy_config_instances' : 'configs/resources/config'},

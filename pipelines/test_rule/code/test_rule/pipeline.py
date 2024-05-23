@@ -7,8 +7,8 @@ from prophecy.utils import *
 from test_rule.graph import *
 
 def pipeline(spark: SparkSession) -> None:
-    df_sample_data = sample_data(spark)
-    df_reformat_data_types = reformat_data_types(spark, df_sample_data)
+    df_HousingPurpose_Sample = HousingPurpose_Sample(spark)
+    df_reformat_data_types = reformat_data_types(spark, df_HousingPurpose_Sample)
     df_add_rule_override_housing_purpose = add_rule_override_housing_purpose(spark, df_reformat_data_types)
 
 def main():

@@ -12,7 +12,7 @@ buildSystemDetails:
   createdAt: '2024-05-23 00:43:52'
 pipelines:
   pipelines/test_rule:
-    name: test_rule
+    name: Test_OverrideHousingPurpose
     description: Ruleset that includes rules for overriding housing purpose.
     author: nathan+business@prophecy.io
     mode: batch
@@ -27,7 +27,7 @@ pipelines:
     dependencies: {}
 datasets:
   datasets/sample_data:
-    name: sample_data
+    name: housingpurposeid_sampledata
     description: ''
     author: nathan+business@prophecy.io
     createdAt: '2024-05-23 01:18:25'
@@ -66,9 +66,25 @@ functions:
   expressions: {}
   airflowFunctions: {}
   businessRules:
+    businessRules/EFS_Override_Rule_ID:
+      name: EFS_Override_Rule_ID
+      description: ''
+      tags: []
+      inputs: []
+      outputs: []
+      author: nathan+business@prophecy.io
+      createdAt: '2022-12-15 18:04:50'
     businessRules/Override_Housing_Purpose:
       name: Override_Housing_Purpose
       description: Rule to override housing purposes
+      tags: []
+      inputs: []
+      outputs: []
+      author: nathan+business@prophecy.io
+      createdAt: '2022-12-15 18:04:50'
+    businessRules/Override_EFS_Residual_Term_Rule_ID:
+      name: Override_EFS_Residual_Term_Rule_ID
+      description: ''
       tags: []
       inputs: []
       outputs: []
