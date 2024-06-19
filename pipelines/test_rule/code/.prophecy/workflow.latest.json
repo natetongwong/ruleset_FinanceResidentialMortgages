@@ -24,7 +24,7 @@
       "isFunctionsPackageDirDefined" : true
     },
     "language" : "python",
-    "fabricId" : "117",
+    "fabricId" : "14277",
     "frontEndLanguage" : "sql",
     "mode" : "batch",
     "udfs" : {
@@ -67,11 +67,11 @@
     "buildSystem" : "maven",
     "externalDependencies" : [ ],
     "dependentProjectExternalDependencies" : [ {
-      "projectUID" : "224",
+      "projectUID" : "12654",
       "projectName" : "ProphecySparkBasicsPython",
       "externalDependencies" : [ ]
     }, {
-      "projectUID" : "225",
+      "projectUID" : "12655",
       "projectName" : "ProphecyWarehousePython",
       "externalDependencies" : [ ]
     } ],
@@ -542,7 +542,7 @@
         "columnsSelector" : [ "z9S5uoHjNUtYTLKBHYqeM$$FG7BQLiEWcXiqsGDXkqPW##Housing_Purpose", "z9S5uoHjNUtYTLKBHYqeM$$FG7BQLiEWcXiqsGDXkqPW##Currency", "z9S5uoHjNUtYTLKBHYqeM$$FG7BQLiEWcXiqsGDXkqPW##Gl_Account_Id", "z9S5uoHjNUtYTLKBHYqeM$$FG7BQLiEWcXiqsGDXkqPW##Origination_system", "z9S5uoHjNUtYTLKBHYqeM$$FG7BQLiEWcXiqsGDXkqPW##Maturity_Date", "z9S5uoHjNUtYTLKBHYqeM$$FG7BQLiEWcXiqsGDXkqPW##AppIn_Id", "z9S5uoHjNUtYTLKBHYqeM$$FG7BQLiEWcXiqsGDXkqPW##Legal_Entity_Id", "z9S5uoHjNUtYTLKBHYqeM$$FG7BQLiEWcXiqsGDXkqPW##From_Date", "z9S5uoHjNUtYTLKBHYqeM$$FG7BQLiEWcXiqsGDXkqPW##Sub_Purpose", "z9S5uoHjNUtYTLKBHYqeM$$FG7BQLiEWcXiqsGDXkqPW##From_Date2", "z9S5uoHjNUtYTLKBHYqeM$$FG7BQLiEWcXiqsGDXkqPW##Predominant_Purpose", "z9S5uoHjNUtYTLKBHYqeM$$FG7BQLiEWcXiqsGDXkqPW##Account_Id", "z9S5uoHjNUtYTLKBHYqeM$$FG7BQLiEWcXiqsGDXkqPW##To_Date", "z9S5uoHjNUtYTLKBHYqeM$$FG7BQLiEWcXiqsGDXkqPW##Secnd_Purps_Type_Lbl", "z9S5uoHjNUtYTLKBHYqeM$$FG7BQLiEWcXiqsGDXkqPW##Prim_Purps_Type_Lbl", "z9S5uoHjNUtYTLKBHYqeM$$FG7BQLiEWcXiqsGDXkqPW##Product_Code", "z9S5uoHjNUtYTLKBHYqeM$$FG7BQLiEWcXiqsGDXkqPW##Src_Sys_Code", "z9S5uoHjNUtYTLKBHYqeM$$FG7BQLiEWcXiqsGDXkqPW##Current_Balance", "z9S5uoHjNUtYTLKBHYqeM$$FG7BQLiEWcXiqsGDXkqPW##Apprv_Lmt_Amt", "z9S5uoHjNUtYTLKBHYqeM$$FG7BQLiEWcXiqsGDXkqPW##Crncy_Code", "z9S5uoHjNUtYTLKBHYqeM$$FG7BQLiEWcXiqsGDXkqPW##To_Date2", "z9S5uoHjNUtYTLKBHYqeM$$FG7BQLiEWcXiqsGDXkqPW##EFS_Housing_purpose_Rule_ID", "z9S5uoHjNUtYTLKBHYqeM$$FG7BQLiEWcXiqsGDXkqPW##Opened_Date" ]
       },
       "componentInfo" : {
-        "gemId" : "gitUri=http://gitserver:3000/wDp16mGH_team_30/QWF0O8MX_project_224.git&subPath=&tag=0.2.25&projectSubscriptionProjectId=224&path=gems/Reformat",
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.25&projectSubscriptionProjectId=12654&path=gems/Reformat",
         "projectName" : "ProphecySparkBasicsPython"
       }
     },
@@ -829,7 +829,7 @@
         "columnsSelector" : [ "kypekm0xczoaqSTRJqX4Q$$yo_lMVY94t6XIeBQfjjlR##Secnd_Purps_Type_Lbl", "kypekm0xczoaqSTRJqX4Q$$yo_lMVY94t6XIeBQfjjlR##Origination_system", "kypekm0xczoaqSTRJqX4Q$$yo_lMVY94t6XIeBQfjjlR##EFS_Housing_Purpose", "kypekm0xczoaqSTRJqX4Q$$yo_lMVY94t6XIeBQfjjlR##Housing_Purpose" ]
       },
       "componentInfo" : {
-        "gemId" : "gitUri=http://gitserver:3000/wDp16mGH_team_30/QWF0O8MX_project_224.git&subPath=&tag=0.2.25&projectSubscriptionProjectId=224&path=gems/Reformat",
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.25&projectSubscriptionProjectId=12654&path=gems/Reformat",
         "projectName" : "ProphecySparkBasicsPython"
       }
     },
@@ -1119,7 +1119,7 @@
       },
       "componentInfo" : {
         "gemId" : "gems/AddRule",
-        "projectName" : "Ruleset_Finance_Residential_Mortgages"
+        "projectName" : "Ruleset_FinanceResidentialMortgages"
       }
     }
   },

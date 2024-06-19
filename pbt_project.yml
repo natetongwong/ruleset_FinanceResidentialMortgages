@@ -105,18 +105,18 @@ dependencies:
   id: '2010666717'
   createdAt: '2024-06-19T20:24:43.638722Z'
 projectDependencies:
-  '225':
-    projectUID: 225
+  '12655':
+    projectUID: 12655
     projectName: ProphecyWarehousePython
-    repositoryPath: gitUri=http://gitserver:3000/wDp16mGH_team_30/QWF0O8MX_project_225.git&subPath=
+    repositoryPath: gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12655.git&subPath=
     version: 0.0.8
     isDefault: true
     author: null
     createdAt: '2024-06-19 20:25:06'
-  '224':
-    projectUID: 224
+  '12654':
+    projectUID: 12654
     projectName: ProphecySparkBasicsPython
-    repositoryPath: gitUri=http://gitserver:3000/wDp16mGH_team_30/QWF0O8MX_project_224.git&subPath=
+    repositoryPath: gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=
     version: 0.2.25
     isDefault: true
     author: null
