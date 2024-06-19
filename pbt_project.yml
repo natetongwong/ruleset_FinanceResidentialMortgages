@@ -25,20 +25,6 @@ pipelines:
       outputs: []
     subgraphs: []
     dependencies: {}
-  pipelines/Test_RiskAssetClassSegmentation:
-    name: Test_RiskAssetClassSegmentation
-    description: Test Risk Asset Class Segmentation Rule
-    author: nathan+business@prophecy.io
-    mode: batch
-    artefactID: ''
-    language: python
-    createdAt: '2024-05-23 21:10:54'
-    datasets:
-      inputs:
-      - datasets/riskassetclass_sampledata
-      outputs: []
-    subgraphs: []
-    dependencies: {}
 datasets:
   datasets/sample_data:
     name: housingpurposeid_sampledata
@@ -53,19 +39,6 @@ datasets:
         description: ''
         author: nathan+business@prophecy.io
         createdAt: '2024-05-23 01:18:25'
-  datasets/riskassetclass_sampledata:
-    name: riskassetclass_sampledata
-    description: ''
-    author: nathan+business@prophecy.io
-    createdAt: '2024-05-23 21:13:50'
-    mode: batch
-    physicalDatasets:
-      DatabricksCluster:
-        fabricId: 117
-        datasetType: Database
-        description: ''
-        author: nathan+business@prophecy.io
-        createdAt: '2024-05-23 21:13:50'
 templates: {}
 jobs: {}
 gemContainer:
@@ -93,14 +66,6 @@ functions:
   expressions: {}
   airflowFunctions: {}
   businessRules:
-    businessRules/RiskAssetClassSegmentation:
-      name: RiskAssetClassSegmentation
-      description: ''
-      tags: []
-      inputs: []
-      outputs: []
-      author: nathan+business@prophecy.io
-      createdAt: '2022-12-15 18:04:50'
     businessRules/Override_Housing_Purpose:
       name: Override_Housing_Purpose
       description: Rule to override housing purposes
@@ -128,34 +93,34 @@ sqlUnreferencedSources: {}
 sqlPipeline: null
 dependencies:
 - type: plibMaven
-  modifiedAt: '2024-06-03T05:52:49.65831Z'
+  modifiedAt: '2024-06-19T20:24:43.638683Z'
   name: plibMaven
-  version: 8.0.4
-  id: '2065112444'
-  createdAt: '2024-06-03T05:52:49.658279Z'
+  version: 8.0.11
+  id: '325327305'
+  createdAt: '2024-06-19T20:24:43.638649Z'
 - type: plibPypi
-  modifiedAt: '2024-06-03T05:52:49.658346Z'
+  modifiedAt: '2024-06-19T20:24:43.638729Z'
   name: plibPypi
-  version: 1.9.3
-  id: '672324977'
-  createdAt: '2024-06-03T05:52:49.658338Z'
+  version: 1.9.5
+  id: '2010666717'
+  createdAt: '2024-06-19T20:24:43.638722Z'
 projectDependencies:
   '225':
     projectUID: 225
     projectName: ProphecyWarehousePython
     repositoryPath: gitUri=http://gitserver:3000/wDp16mGH_team_30/QWF0O8MX_project_225.git&subPath=
-    version: 0.0.6
+    version: 0.0.8
     isDefault: true
     author: null
-    createdAt: '2024-05-23 00:43:30'
+    createdAt: '2024-06-19 20:25:06'
   '224':
     projectUID: 224
     projectName: ProphecySparkBasicsPython
     repositoryPath: gitUri=http://gitserver:3000/wDp16mGH_team_30/QWF0O8MX_project_224.git&subPath=
-    version: 0.2.14
+    version: 0.2.25
     isDefault: true
     author: null
-    createdAt: '2024-05-23 00:43:30'
+    createdAt: '2024-06-19 20:25:02'
 flags:
   shouldAddDefaultDependenciesIfAbsent: true
 pipelineConfigurations: {}

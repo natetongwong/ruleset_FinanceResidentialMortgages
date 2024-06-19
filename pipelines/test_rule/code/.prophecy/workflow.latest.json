@@ -12,8 +12,8 @@
     "codeGenConfiguration" : {
       "editableConfig" : true,
       "plibVersion" : {
-        "mavenVersion" : "8.0.4",
-        "pyPiVersion" : "1.9.3"
+        "mavenVersion" : "8.0.11",
+        "pyPiVersion" : "1.9.5"
       }
     },
     "id" : "1",
@@ -75,16 +75,16 @@
       "projectName" : "ProphecyWarehousePython",
       "externalDependencies" : [ ]
     } ],
-    "topLevelPackage" : "test_rule",
-    "configurationVersion" : "v2",
+    "isImported" : false,
+    "interimMode" : "Full",
+    "interimModeEnabled" : true,
+    "visualCodeInterimMode" : "Disabled",
     "recordsLimit" : {
       "enabled" : false,
       "value" : 1000
     },
-    "interimModeEnabled" : true,
-    "isImported" : false,
-    "visualCodeInterimMode" : "Disabled",
-    "interimMode" : "Full"
+    "topLevelPackage" : "test_rule",
+    "configurationVersion" : "v2"
   },
   "connections" : [ {
     "id" : "F5C0BLGmFoly9oKZkBp0i",
@@ -118,7 +118,7 @@
         "cache" : false,
         "detailedStats" : false,
         "isImported" : false,
-        "comment" : "Loads sample data from a Parquet file.",
+        "comment" : "Reads sample data from the 'housingpurposeid_sampledata' table.",
         "autoUpdateComment" : true
       },
       "ports" : {
@@ -151,7 +151,219 @@
       "ports" : {
         "inputs" : [ {
           "id" : "z9S5uoHjNUtYTLKBHYqeM$$FG7BQLiEWcXiqsGDXkqPW",
-          "slug" : "in0"
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "From_Date",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The starting date of the sample data",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "To_Date",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The ending date of the sample data",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Account_Id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The unique identifier for the account",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Src_Sys_Code",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The source system code for the account",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Product_Code",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Code representing the specific product",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Gl_Account_Id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "ID of the general ledger account associated with the transaction",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Legal_Entity_Id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The unique identifier for the legal entity associated with the account",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Current_Balance",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The current balance of the account",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Maturity_Date",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The date when the account or product matures",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Opened_Date",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The date when the account or product was opened",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Currency",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The currency used for financial transactions",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "From_Date2",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The starting date of a secondary time period",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "To_Date2",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The second date in a date range",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "AppIn_Id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The unique ID of the application",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Origination_system",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The system from which the data originated",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Prim_Purps_Type_Lbl",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The primary purpose label associated with the data",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Secnd_Purps_Type_Lbl",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Label indicating the secondary purpose type",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Crncy_Code",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Currency code used for the transaction",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Apprv_Lmt_Amt",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Approved limit amount for the account",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Predominant_Purpose",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The main purpose or reason associated with the account",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Housing_Purpose",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The primary purpose for which the loan or credit is intended, related to housing",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Sub_Purpose",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The specific sub-purpose or category within the housing purpose for the loan or credit",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "EFS_Housing_purpose_Rule_ID",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The unique ID associated with the housing purpose rule in the EFS system",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "PQME489rJhIIgvg5z8Wnn$$dMIWFbzstjdOF9WcAST5v",
@@ -330,7 +542,7 @@
         "columnsSelector" : [ "z9S5uoHjNUtYTLKBHYqeM$$FG7BQLiEWcXiqsGDXkqPW##Housing_Purpose", "z9S5uoHjNUtYTLKBHYqeM$$FG7BQLiEWcXiqsGDXkqPW##Currency", "z9S5uoHjNUtYTLKBHYqeM$$FG7BQLiEWcXiqsGDXkqPW##Gl_Account_Id", "z9S5uoHjNUtYTLKBHYqeM$$FG7BQLiEWcXiqsGDXkqPW##Origination_system", "z9S5uoHjNUtYTLKBHYqeM$$FG7BQLiEWcXiqsGDXkqPW##Maturity_Date", "z9S5uoHjNUtYTLKBHYqeM$$FG7BQLiEWcXiqsGDXkqPW##AppIn_Id", "z9S5uoHjNUtYTLKBHYqeM$$FG7BQLiEWcXiqsGDXkqPW##Legal_Entity_Id", "z9S5uoHjNUtYTLKBHYqeM$$FG7BQLiEWcXiqsGDXkqPW##From_Date", "z9S5uoHjNUtYTLKBHYqeM$$FG7BQLiEWcXiqsGDXkqPW##Sub_Purpose", "z9S5uoHjNUtYTLKBHYqeM$$FG7BQLiEWcXiqsGDXkqPW##From_Date2", "z9S5uoHjNUtYTLKBHYqeM$$FG7BQLiEWcXiqsGDXkqPW##Predominant_Purpose", "z9S5uoHjNUtYTLKBHYqeM$$FG7BQLiEWcXiqsGDXkqPW##Account_Id", "z9S5uoHjNUtYTLKBHYqeM$$FG7BQLiEWcXiqsGDXkqPW##To_Date", "z9S5uoHjNUtYTLKBHYqeM$$FG7BQLiEWcXiqsGDXkqPW##Secnd_Purps_Type_Lbl", "z9S5uoHjNUtYTLKBHYqeM$$FG7BQLiEWcXiqsGDXkqPW##Prim_Purps_Type_Lbl", "z9S5uoHjNUtYTLKBHYqeM$$FG7BQLiEWcXiqsGDXkqPW##Product_Code", "z9S5uoHjNUtYTLKBHYqeM$$FG7BQLiEWcXiqsGDXkqPW##Src_Sys_Code", "z9S5uoHjNUtYTLKBHYqeM$$FG7BQLiEWcXiqsGDXkqPW##Current_Balance", "z9S5uoHjNUtYTLKBHYqeM$$FG7BQLiEWcXiqsGDXkqPW##Apprv_Lmt_Amt", "z9S5uoHjNUtYTLKBHYqeM$$FG7BQLiEWcXiqsGDXkqPW##Crncy_Code", "z9S5uoHjNUtYTLKBHYqeM$$FG7BQLiEWcXiqsGDXkqPW##To_Date2", "z9S5uoHjNUtYTLKBHYqeM$$FG7BQLiEWcXiqsGDXkqPW##EFS_Housing_purpose_Rule_ID", "z9S5uoHjNUtYTLKBHYqeM$$FG7BQLiEWcXiqsGDXkqPW##Opened_Date" ]
       },
       "componentInfo" : {
-        "gemId" : "gitUri=http://gitserver:3000/wDp16mGH_team_30/QWF0O8MX_project_224.git&subPath=&tag=0.2.14&projectSubscriptionProjectId=224&path=gems/Reformat",
+        "gemId" : "gitUri=http://gitserver:3000/wDp16mGH_team_30/QWF0O8MX_project_224.git&subPath=&tag=0.2.25&projectSubscriptionProjectId=224&path=gems/Reformat",
         "projectName" : "ProphecySparkBasicsPython"
       }
     },
@@ -350,7 +562,228 @@
       "ports" : {
         "inputs" : [ {
           "id" : "kypekm0xczoaqSTRJqX4Q$$yo_lMVY94t6XIeBQfjjlR",
-          "slug" : "add_rule_override_housing_purpose"
+          "slug" : "add_rule_override_housing_purpose",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "From_Date",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The starting date of the sample data",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "To_Date",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The ending date of the sample data",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Account_Id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The unique identifier for the account",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Src_Sys_Code",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The source system code for the account",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Product_Code",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Code representing the specific product",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Gl_Account_Id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "ID of the general ledger account associated with the transaction",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Legal_Entity_Id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The unique identifier for the legal entity associated with the account",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Current_Balance",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The current balance of the account",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Maturity_Date",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The date when the account or product matures",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Opened_Date",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The date when the account or product was opened",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Currency",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The currency used for financial transactions",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "From_Date2",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The starting date of a secondary time period",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "To_Date2",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The second date in a date range",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "AppIn_Id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The unique ID of the application",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Origination_system",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The system from which the data originated",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Prim_Purps_Type_Lbl",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The primary purpose label associated with the data",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Secnd_Purps_Type_Lbl",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Crncy_Code",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Currency code used for the transaction",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Apprv_Lmt_Amt",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Approved limit amount for the account",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Predominant_Purpose",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The main purpose or reason associated with the account",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Housing_Purpose",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The primary purpose for which the loan or credit is intended, related to housing",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Sub_Purpose",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The specific sub-purpose or category within the housing purpose for the loan or credit",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "EFS_Housing_purpose_Rule_ID",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The unique ID associated with the housing purpose rule in the EFS system",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "EFS_Housing_Purpose",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "o28tgF2n-rrg9NO6srMFI$$AsysN8bK0BU3V6sHnHXdb",
@@ -396,7 +829,7 @@
         "columnsSelector" : [ "kypekm0xczoaqSTRJqX4Q$$yo_lMVY94t6XIeBQfjjlR##Secnd_Purps_Type_Lbl", "kypekm0xczoaqSTRJqX4Q$$yo_lMVY94t6XIeBQfjjlR##Origination_system", "kypekm0xczoaqSTRJqX4Q$$yo_lMVY94t6XIeBQfjjlR##EFS_Housing_Purpose", "kypekm0xczoaqSTRJqX4Q$$yo_lMVY94t6XIeBQfjjlR##Housing_Purpose" ]
       },
       "componentInfo" : {
-        "gemId" : "gitUri=http://gitserver:3000/wDp16mGH_team_30/QWF0O8MX_project_224.git&subPath=&tag=0.2.14&projectSubscriptionProjectId=224&path=gems/Reformat",
+        "gemId" : "gitUri=http://gitserver:3000/wDp16mGH_team_30/QWF0O8MX_project_224.git&subPath=&tag=0.2.25&projectSubscriptionProjectId=224&path=gems/Reformat",
         "projectName" : "ProphecySparkBasicsPython"
       }
     },
@@ -416,7 +849,219 @@
       "ports" : {
         "inputs" : [ {
           "id" : "LF54J2JJDG1c9J_kqQ9PD$$YZFYOyVkRmFWDW4h58JGS",
-          "slug" : "in0"
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "From_Date",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The starting date of the sample data",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "To_Date",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The ending date of the sample data",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Account_Id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The unique identifier for the account",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Src_Sys_Code",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The source system code for the account",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Product_Code",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Code representing the specific product",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Gl_Account_Id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "ID of the general ledger account associated with the transaction",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Legal_Entity_Id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The unique identifier for the legal entity associated with the account",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Current_Balance",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The current balance of the account",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Maturity_Date",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The date when the account or product matures",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Opened_Date",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The date when the account or product was opened",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Currency",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The currency used for financial transactions",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "From_Date2",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The starting date of a secondary time period",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "To_Date2",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The second date in a date range",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "AppIn_Id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The unique ID of the application",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Origination_system",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The system from which the data originated",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Prim_Purps_Type_Lbl",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The primary purpose label associated with the data",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Secnd_Purps_Type_Lbl",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Crncy_Code",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Currency code used for the transaction",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Apprv_Lmt_Amt",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Approved limit amount for the account",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Predominant_Purpose",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The main purpose or reason associated with the account",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Housing_Purpose",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The primary purpose for which the loan or credit is intended, related to housing",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Sub_Purpose",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The specific sub-purpose or category within the housing purpose for the loan or credit",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "EFS_Housing_purpose_Rule_ID",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The unique ID associated with the housing purpose rule in the EFS system",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "pDMoaqt3alzj4FVspmueL$$ImygkdMZL0zEpcdwKDZbr",
@@ -484,618 +1129,5 @@
     "selectedInputFields" : [ ],
     "isCustomOutputSchema" : false,
     "autoUpdateOnRun" : false
-  },
-  "diagnostics" : [ {
-    "property" : "$.workflow.processes.xHssG_sXDndpmlTyskGFu$$db-aDgEiAcHjdaMTDUWHJ.properties.dataset.schema",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 2,
-    "message" : "Missing Schema. Please infer schema or provide it manually.",
-    "tags" : [ ],
-    "relatedInformation" : [ ],
-    "diagnosticType" : 1
-  }, {
-    "property" : "$.workflow.processes.xAsBRAIcJy7JjFXXHkpPH$$tQ6_upZ_TIO2iQ_EXS1BI",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 2,
-    "message" : "One of the upstream gems is broken. Please, fix it first.",
-    "tags" : [ ],
-    "relatedInformation" : [ ],
-    "diagnosticType" : 1
-  }, {
-    "property" : "$.workflow.processes.xAsBRAIcJy7JjFXXHkpPH$$tQ6_upZ_TIO2iQ_EXS1BI.properties.expressions[0].expression.expression",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 2,
-    "message" : "No match found for column From_Date",
-    "tags" : [ ],
-    "relatedInformation" : [ ],
-    "diagnosticType" : 1
-  }, {
-    "property" : "$.workflow.processes.xAsBRAIcJy7JjFXXHkpPH$$tQ6_upZ_TIO2iQ_EXS1BI.properties.expressions[1].expression.expression",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 2,
-    "message" : "No match found for column To_Date",
-    "tags" : [ ],
-    "relatedInformation" : [ ],
-    "diagnosticType" : 1
-  }, {
-    "property" : "$.workflow.processes.xAsBRAIcJy7JjFXXHkpPH$$tQ6_upZ_TIO2iQ_EXS1BI.properties.expressions[2].expression.expression",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 2,
-    "message" : "No match found for column Account_Id",
-    "tags" : [ ],
-    "relatedInformation" : [ ],
-    "diagnosticType" : 1
-  }, {
-    "property" : "$.workflow.processes.xAsBRAIcJy7JjFXXHkpPH$$tQ6_upZ_TIO2iQ_EXS1BI.properties.expressions[3].expression.expression",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 2,
-    "message" : "No match found for column Src_Sys_Code",
-    "tags" : [ ],
-    "relatedInformation" : [ ],
-    "diagnosticType" : 1
-  }, {
-    "property" : "$.workflow.processes.xAsBRAIcJy7JjFXXHkpPH$$tQ6_upZ_TIO2iQ_EXS1BI.properties.expressions[4].expression.expression",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 2,
-    "message" : "No match found for column Product_Code",
-    "tags" : [ ],
-    "relatedInformation" : [ ],
-    "diagnosticType" : 1
-  }, {
-    "property" : "$.workflow.processes.xAsBRAIcJy7JjFXXHkpPH$$tQ6_upZ_TIO2iQ_EXS1BI.properties.expressions[5].expression.expression",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 2,
-    "message" : "No match found for column Gl_Account_Id",
-    "tags" : [ ],
-    "relatedInformation" : [ ],
-    "diagnosticType" : 1
-  }, {
-    "property" : "$.workflow.processes.xAsBRAIcJy7JjFXXHkpPH$$tQ6_upZ_TIO2iQ_EXS1BI.properties.expressions[6].expression.expression",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 2,
-    "message" : "No match found for column Legal_Entity_Id",
-    "tags" : [ ],
-    "relatedInformation" : [ ],
-    "diagnosticType" : 1
-  }, {
-    "property" : "$.workflow.processes.xAsBRAIcJy7JjFXXHkpPH$$tQ6_upZ_TIO2iQ_EXS1BI.properties.expressions[7].expression.expression",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 2,
-    "message" : "No match found for column Current_Balance",
-    "tags" : [ ],
-    "relatedInformation" : [ ],
-    "diagnosticType" : 1
-  }, {
-    "property" : "$.workflow.processes.xAsBRAIcJy7JjFXXHkpPH$$tQ6_upZ_TIO2iQ_EXS1BI.properties.expressions[8].expression.expression",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 2,
-    "message" : "No match found for column Maturity_Date",
-    "tags" : [ ],
-    "relatedInformation" : [ ],
-    "diagnosticType" : 1
-  }, {
-    "property" : "$.workflow.processes.xAsBRAIcJy7JjFXXHkpPH$$tQ6_upZ_TIO2iQ_EXS1BI.properties.expressions[9].expression.expression",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 2,
-    "message" : "No match found for column Opened_Date",
-    "tags" : [ ],
-    "relatedInformation" : [ ],
-    "diagnosticType" : 1
-  }, {
-    "property" : "$.workflow.processes.xAsBRAIcJy7JjFXXHkpPH$$tQ6_upZ_TIO2iQ_EXS1BI.properties.expressions[10].expression.expression",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 2,
-    "message" : "No match found for column Currency",
-    "tags" : [ ],
-    "relatedInformation" : [ ],
-    "diagnosticType" : 1
-  }, {
-    "property" : "$.workflow.processes.xAsBRAIcJy7JjFXXHkpPH$$tQ6_upZ_TIO2iQ_EXS1BI.properties.expressions[11].expression.expression",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 2,
-    "message" : "No match found for column From_Date2",
-    "tags" : [ ],
-    "relatedInformation" : [ ],
-    "diagnosticType" : 1
-  }, {
-    "property" : "$.workflow.processes.xAsBRAIcJy7JjFXXHkpPH$$tQ6_upZ_TIO2iQ_EXS1BI.properties.expressions[12].expression.expression",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 2,
-    "message" : "No match found for column To_Date2",
-    "tags" : [ ],
-    "relatedInformation" : [ ],
-    "diagnosticType" : 1
-  }, {
-    "property" : "$.workflow.processes.xAsBRAIcJy7JjFXXHkpPH$$tQ6_upZ_TIO2iQ_EXS1BI.properties.expressions[13].expression.expression",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 2,
-    "message" : "No match found for column AppIn_Id",
-    "tags" : [ ],
-    "relatedInformation" : [ ],
-    "diagnosticType" : 1
-  }, {
-    "property" : "$.workflow.processes.xAsBRAIcJy7JjFXXHkpPH$$tQ6_upZ_TIO2iQ_EXS1BI.properties.expressions[14].expression.expression",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 2,
-    "message" : "No match found for column Origination_system",
-    "tags" : [ ],
-    "relatedInformation" : [ ],
-    "diagnosticType" : 1
-  }, {
-    "property" : "$.workflow.processes.xAsBRAIcJy7JjFXXHkpPH$$tQ6_upZ_TIO2iQ_EXS1BI.properties.expressions[15].expression.expression",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 2,
-    "message" : "No match found for column Prim_Purps_Type_Lbl",
-    "tags" : [ ],
-    "relatedInformation" : [ ],
-    "diagnosticType" : 1
-  }, {
-    "property" : "$.workflow.processes.xAsBRAIcJy7JjFXXHkpPH$$tQ6_upZ_TIO2iQ_EXS1BI.properties.expressions[16].expression.expression",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 2,
-    "message" : "No match found for column Secnd_Purps_Type_Lbl",
-    "tags" : [ ],
-    "relatedInformation" : [ ],
-    "diagnosticType" : 1
-  }, {
-    "property" : "$.workflow.processes.xAsBRAIcJy7JjFXXHkpPH$$tQ6_upZ_TIO2iQ_EXS1BI.properties.expressions[17].expression.expression",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 2,
-    "message" : "No match found for column Crncy_Code",
-    "tags" : [ ],
-    "relatedInformation" : [ ],
-    "diagnosticType" : 1
-  }, {
-    "property" : "$.workflow.processes.xAsBRAIcJy7JjFXXHkpPH$$tQ6_upZ_TIO2iQ_EXS1BI.properties.expressions[18].expression.expression",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 2,
-    "message" : "No match found for column Apprv_Lmt_Amt",
-    "tags" : [ ],
-    "relatedInformation" : [ ],
-    "diagnosticType" : 1
-  }, {
-    "property" : "$.workflow.processes.xAsBRAIcJy7JjFXXHkpPH$$tQ6_upZ_TIO2iQ_EXS1BI.properties.expressions[19].expression.expression",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 2,
-    "message" : "No match found for column Predominant_Purpose",
-    "tags" : [ ],
-    "relatedInformation" : [ ],
-    "diagnosticType" : 1
-  }, {
-    "property" : "$.workflow.processes.xAsBRAIcJy7JjFXXHkpPH$$tQ6_upZ_TIO2iQ_EXS1BI.properties.expressions[20].expression.expression",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 2,
-    "message" : "No match found for column Housing_Purpose",
-    "tags" : [ ],
-    "relatedInformation" : [ ],
-    "diagnosticType" : 1
-  }, {
-    "property" : "$.workflow.processes.xAsBRAIcJy7JjFXXHkpPH$$tQ6_upZ_TIO2iQ_EXS1BI.properties.expressions[21].expression.expression",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 2,
-    "message" : "No match found for column Sub_Purpose",
-    "tags" : [ ],
-    "relatedInformation" : [ ],
-    "diagnosticType" : 1
-  }, {
-    "property" : "$.workflow.processes.xAsBRAIcJy7JjFXXHkpPH$$tQ6_upZ_TIO2iQ_EXS1BI.properties.expressions[22].expression.expression",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 2,
-    "message" : "No match found for column EFS_Housing_purpose_Rule_ID",
-    "tags" : [ ],
-    "relatedInformation" : [ ],
-    "diagnosticType" : 1
-  }, {
-    "property" : "$.workflow.processes.I1OO688EzOIu_a1AJevXz$$Il09M8B0utoHsfN55bZh9",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 2,
-    "message" : "One of the upstream gems is broken. Please, fix it first.",
-    "tags" : [ ],
-    "relatedInformation" : [ ],
-    "diagnosticType" : 1
-  }, {
-    "property" : "$.workflow.processes.I1OO688EzOIu_a1AJevXz$$Il09M8B0utoHsfN55bZh9.I1OO688EzOIu_a1AJevXz$$Il09M8B0utoHsfN55bZh9",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 2,
-    "message" : "Error in validating the component: 'NoneType' object has no attribute 'fields'",
-    "tags" : [ ],
-    "relatedInformation" : [ ],
-    "diagnosticType" : 1
-  }, {
-    "property" : "$.workflow.processes.q1yapOyuoct754Yvblcnb$$Mcz4FXvGtj9nWeTUWi2DH",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 2,
-    "message" : "One of the upstream gems is broken. Please, fix it first.",
-    "tags" : [ ],
-    "relatedInformation" : [ ],
-    "diagnosticType" : 1
-  }, {
-    "property" : "$.workflow.processes.q1yapOyuoct754Yvblcnb$$Mcz4FXvGtj9nWeTUWi2DH.properties.expressions[0].expression.expression",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 2,
-    "message" : "No match found for column Secnd_Purps_Type_Lbl",
-    "tags" : [ ],
-    "relatedInformation" : [ ],
-    "diagnosticType" : 1
-  }, {
-    "property" : "$.workflow.processes.q1yapOyuoct754Yvblcnb$$Mcz4FXvGtj9nWeTUWi2DH.properties.expressions[1].expression.expression",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 2,
-    "message" : "No match found for column Origination_system",
-    "tags" : [ ],
-    "relatedInformation" : [ ],
-    "diagnosticType" : 1
-  }, {
-    "property" : "$.workflow.processes.q1yapOyuoct754Yvblcnb$$Mcz4FXvGtj9nWeTUWi2DH.properties.expressions[2].expression.expression",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 2,
-    "message" : "No match found for column Housing_Purpose",
-    "tags" : [ ],
-    "relatedInformation" : [ ],
-    "diagnosticType" : 1
-  }, {
-    "property" : "$.workflow.processes.q1yapOyuoct754Yvblcnb$$Mcz4FXvGtj9nWeTUWi2DH.properties.expressions[3].expression.expression",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 2,
-    "message" : "No match found for column EFS_Housing_Purpose",
-    "tags" : [ ],
-    "relatedInformation" : [ ],
-    "diagnosticType" : 1
-  }, {
-    "property" : "$.workflow.processes.I1OO688EzOIu_a1AJevXz$$Il09M8B0utoHsfN55bZh9.test.unitTests[0].data.LF54J2JJDG1c9J_kqQ9PD$$YZFYOyVkRmFWDW4h58JGS.schema.fields[0].name",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 1,
-    "message" : "Column in0.Origination_system used within the test Unit Test  is not defined.",
-    "tags" : [ ],
-    "relatedInformation" : [ ],
-    "diagnosticType" : 1
-  }, {
-    "property" : "$.workflow.processes.I1OO688EzOIu_a1AJevXz$$Il09M8B0utoHsfN55bZh9.test.unitTests[0].data.LF54J2JJDG1c9J_kqQ9PD$$YZFYOyVkRmFWDW4h58JGS.schema.fields[1].name",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 1,
-    "message" : "Column in0.Secnd_Purps_Type_Lbl used within the test Unit Test  is not defined.",
-    "tags" : [ ],
-    "relatedInformation" : [ ],
-    "diagnosticType" : 1
-  }, {
-    "property" : "$.workflow.processes.I1OO688EzOIu_a1AJevXz$$Il09M8B0utoHsfN55bZh9.test.unitTests[0].data.LF54J2JJDG1c9J_kqQ9PD$$YZFYOyVkRmFWDW4h58JGS.schema.fields[2].name",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 1,
-    "message" : "Column in0.Housing_Purpose used within the test Unit Test  is not defined.",
-    "tags" : [ ],
-    "relatedInformation" : [ ],
-    "diagnosticType" : 1
-  }, {
-    "property" : "$.workflow.processes.I1OO688EzOIu_a1AJevXz$$Il09M8B0utoHsfN55bZh9.test.unitTests[0].data.pDMoaqt3alzj4FVspmueL$$ImygkdMZL0zEpcdwKDZbr.schema.fields[0].name",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 1,
-    "message" : "Column out.EFS_Housing_Purpose used within the test Unit Test  is not defined.",
-    "tags" : [ ],
-    "relatedInformation" : [ ],
-    "diagnosticType" : 1
-  } ]
+  }
 }
