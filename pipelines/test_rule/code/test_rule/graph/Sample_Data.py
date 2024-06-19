@@ -7,4 +7,4 @@ from test_rule.config.ConfigStore import *
 from test_rule.functions import *
 
 def Sample_Data(spark: SparkSession) -> DataFrame:
-    return spark.read.table("`westpac`.`raw`.`housingpurposeid_sampledata`")
+    return spark.read.format("parquet").load(Config.parquet_filename)

@@ -12,8 +12,8 @@
     "codeGenConfiguration" : {
       "editableConfig" : true,
       "plibVersion" : {
-        "mavenVersion" : "7.1.100",
-        "pyPiVersion" : "1.8.23"
+        "mavenVersion" : "8.0.4",
+        "pyPiVersion" : "1.9.3"
       }
     },
     "id" : "1",
@@ -66,16 +66,16 @@
       "projectName" : "ProphecyWarehousePython",
       "externalDependencies" : [ ]
     } ],
-    "isImported" : false,
-    "interimMode" : "Full",
-    "interimModeEnabled" : true,
-    "visualCodeInterimMode" : "Disabled",
+    "topLevelPackage" : "test_riskassetclasssegmentation",
+    "configurationVersion" : "v2",
     "recordsLimit" : {
       "enabled" : false,
       "value" : 1000
     },
-    "topLevelPackage" : "test_riskassetclasssegmentation",
-    "configurationVersion" : "v2"
+    "interimModeEnabled" : true,
+    "isImported" : false,
+    "visualCodeInterimMode" : "Disabled",
+    "interimMode" : "Full"
   },
   "connections" : [ {
     "id" : "CLzYkI5KmEABpMp-my6w_$$-x4UEChI9h8pOxhk8HjD9",

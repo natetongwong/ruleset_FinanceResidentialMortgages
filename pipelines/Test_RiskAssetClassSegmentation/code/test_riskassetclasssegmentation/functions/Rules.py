@@ -1,19 +1,21 @@
 from pyspark.sql import *
 from pyspark.sql.functions import *
 from pyspark.sql.types import *
+from prophecy.utils import *
 
+@execute_rule
 def RiskAssetClassSegmentation(
-        product_type_code: Column=col("PRODUCT_TYPE_CODE"), 
-        con_bus_indc: Column=col("CON_BUS_INDC"), 
-        reglt_counterparty_type_code: Column=col("REGLT_COUNTERPARTY_TYPE_CODE"), 
-        lg_product_l08_key: Column=col("LG_PRODUCT_L08_KEY"), 
-        tce: Column=col("TCE"), 
-        month_key: Column=col("MONTH_KEY"), 
-        basel_retail_corp_code: Column=col("BASEL_RETAIL_CORP_CODE"), 
-        source_system_code: Column=col("SOURCE_SYSTEM_CODE"), 
-        consol_annual_revenue: Column=col("CONSOL_ANNUAL_REVENUE"), 
-        anzsic_code: Column=col("ANZSIC_CODE"), 
-        owner_occupied_flg: Column=col("OWNER_OCCUPIED_FLG")
+        product_type_code: Column=lambda: col("PRODUCT_TYPE_CODE"), 
+        con_bus_indc: Column=lambda: col("CON_BUS_INDC"), 
+        reglt_counterparty_type_code: Column=lambda: col("REGLT_COUNTERPARTY_TYPE_CODE"), 
+        lg_product_l08_key: Column=lambda: col("LG_PRODUCT_L08_KEY"), 
+        tce: Column=lambda: col("TCE"), 
+        month_key: Column=lambda: col("MONTH_KEY"), 
+        basel_retail_corp_code: Column=lambda: col("BASEL_RETAIL_CORP_CODE"), 
+        source_system_code: Column=lambda: col("SOURCE_SYSTEM_CODE"), 
+        consol_annual_revenue: Column=lambda: col("CONSOL_ANNUAL_REVENUE"), 
+        anzsic_code: Column=lambda: col("ANZSIC_CODE"), 
+        owner_occupied_flg: Column=lambda: col("OWNER_OCCUPIED_FLG")
 ):
     return when((product_type_code.isin(lit("HL"), lit("IL"), lit("EA"), lit("PF")) & (con_bus_indc != lit("B"))), lit("MRTG"))\
         .when(
@@ -94,10 +96,11 @@ def RiskAssetClassSegmentation(
         .otherwise(lit(None))\
         .alias("Asset_Class")
 
+@execute_rule
 def Override_Housing_Purpose(
-        secnd_purps_type_lbl: Column=col("Secnd_Purps_Type_Lbl"), 
-        origination_system: Column=col("Origination_system"), 
-        housing_purpose: Column=col("Housing_Purpose")
+        secnd_purps_type_lbl: Column=lambda: col("Secnd_Purps_Type_Lbl"), 
+        origination_system: Column=lambda: col("Origination_system"), 
+        housing_purpose: Column=lambda: col("Housing_Purpose")
 ):
     return when(
           (
@@ -112,7 +115,11 @@ def Override_Housing_Purpose(
         .otherwise(col("housing_purpose"))\
         .alias("EFS_Housing_Purpose")
 
-def Override_EFS_Rule_Id(residual_years: Column=col("Residual_years"), maturity_date: Column=col("Maturity_Date")):
+@execute_rule
+def Override_EFS_Rule_Id(
+        residual_years: Column=lambda: col("Residual_years"), 
+        maturity_date: Column=lambda: col("Maturity_Date")
+):
     return when(((residual_years > lit(0)) & (residual_years <= lit(1))), lit(5))\
         .when((residual_years > lit(1)), lit(6))\
         .when((maturity_date == lit("")), lit(7))\
