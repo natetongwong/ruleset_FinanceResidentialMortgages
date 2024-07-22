@@ -1,6 +1,6 @@
 name: Ruleset10_Override_Housing_Purpose
 description: Contains rule for overriding housing purpose
-version: '2.3'
+version: '2.4'
 author: nathan+business@prophecy.io
 language: python
 buildSystem: ''
