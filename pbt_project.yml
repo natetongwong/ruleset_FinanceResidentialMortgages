@@ -95,15 +95,19 @@ dependencies:
 - type: plibMaven
   modifiedAt: '2024-06-19T20:24:43.638683Z'
   name: plibMaven
-  version: 8.0.11
+  version: 8.0.25
   id: '325327305'
   createdAt: '2024-06-19T20:24:43.638649Z'
+  enabled: true
+  entity: Project
 - type: plibPypi
   modifiedAt: '2024-06-19T20:24:43.638729Z'
   name: plibPypi
-  version: 1.9.5
+  version: 1.9.9
   id: '2010666717'
   createdAt: '2024-06-19T20:24:43.638722Z'
+  enabled: true
+  entity: Project
 projectDependencies:
   '12655':
     projectUID: 12655
