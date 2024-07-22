@@ -72,7 +72,7 @@ functions:
       tags: []
       inputs: []
       outputs: []
-      author: nathan+business@prophecy.io
+      author: nathan+emirates@prophecy.io
       createdAt: '2022-12-15 18:04:50'
     businessRules/Override_EFS_Rule_Id:
       name: Override_EFS_Rule_Id
@@ -80,7 +80,7 @@ functions:
       tags: []
       inputs: []
       outputs: []
-      author: nathan+business@prophecy.io
+      author: nathan+emirates@prophecy.io
       createdAt: '2022-12-15 18:04:50'
 subgraphs: {}
 sqlModels: {}
