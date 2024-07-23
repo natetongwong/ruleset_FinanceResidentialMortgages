@@ -9,8 +9,7 @@ from test_rule.graph import *
 def pipeline(spark: SparkSession) -> None:
     df_Sample_Data = Sample_Data(spark)
     df_Reformat = Reformat(spark, df_Sample_Data)
-    df_Add_Rule = Add_Rule(spark, df_Reformat)
-    df_Check_Output = Check_Output(spark, df_Add_Rule)
+    df_add_override_housing_purpose = add_override_housing_purpose(spark, df_Reformat)
 
 def main():
     spark = SparkSession.builder\
